@@ -198,7 +198,7 @@
                         <a href="/assets/images/ConnorPaladinoSummer2024.pdf" target="_blank" class="btn">Download Resume</a>
                     </div>
                     <div class="contactRight">
-                        <form >
+                        <form name="submit-to-google-sheet">
                             <input type="text" name="Name" placeholder="Your Name" required>
                             <input type="email" name="E-mail" placeholder="Your E-mail" required>
                             <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
@@ -245,6 +245,20 @@
                 sideMenu.style.right = "-200px"
             }
 
+        </script>
+
+        <!-------------------- contact form script ----------------->
+
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzZKu0SIytvWcYBhpWEYChihAJXokz3vPr1u8maz1DAwcsHoi2ZWP7glvEPUW5dcGBZ/exec'
+            const form = document.forms['submit-to-google-sheet']
+        
+            form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+            })
         </script>
 
     </body>
