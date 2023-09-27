@@ -339,7 +339,7 @@ form input, form textarea{
     background:#b6b6b8;
     padding: 15px;
     margin: 15px 0;
-    color: #FFFFFF;
+    color: #000000;
     font-size: 18px;
     border-radius: 6px;
 }
@@ -450,4 +450,10 @@ nav .fa-solid{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -10px;
+    display: block;
 }
